@@ -1,152 +1,173 @@
-🦯 Smart Stick for Visually Impaired
-Project Description
+Smart Stick for Visually Impaired
+Fall Detection & Health Monitoring with Obstacle Alert
+📌 Project Overview
 
-This project is a Smart Assistive Stick for Visually Impaired People built using Arduino.
-It helps the user to:
+This project is an Arduino-based smart walking stick designed to assist visually impaired individuals.
+It improves safety by detecting obstacles, falls, and health abnormalities, and provides audio, visual, and wireless alerts.
 
-Detect obstacles in front
+The system combines:
 
-Detect falls
+Obstacle detection using an ultrasonic sensor
 
-Monitor heart rate
+Fall detection using an accelerometer
 
-Get alerts using buzzer, lights, display, and Bluetooth
+Heart rate monitoring
 
-The system improves safety, mobility, and emergency awareness.
+Alerts using buzzer, RGB LEDs, OLED display
 
-Main Features
+Emergency data transmission via Bluetooth (HC-05)
 
-Obstacle detection using Ultrasonic sensor
+🎯 Objectives
 
-Fall detection using Accelerometer
+Detect nearby obstacles and alert the user
 
-Heart rate monitoring using Pulse Sensor
+Detect sudden falls and trigger emergency alerts
 
-Alerts using Buzzer
+Monitor heart rate continuously
 
-Visual feedback using RGB LED
+Provide clear feedback through sound, light, display, and Bluetooth
 
-Information display using OLED screen
+Improve independent mobility for visually impaired users
 
-Wireless data sharing using Bluetooth (HC-05)
-
-Components Used
-
-Arduino Uno / Nano
-
-Ultrasonic Sensor (HC-SR04)
-
-ADXL345 Accelerometer
-
-Pulse Sensor
-
-OLED Display (SSD1306)
-
-HC-05 Bluetooth Module
-
-RGB LED (WS2812)
-
-Buzzer
-
-Connecting wires
-
-How the System Works
-
-When an obstacle is detected → Buzzer beeps
-
-When a fall is detected → Buzzer + Display + Bluetooth alert
-
-When heartbeat is detected → BPM shown on display and sent via Bluetooth
-
-When idle → Owner name scrolls on the OLED screen
-
-Pin Connections
-Ultrasonic Sensor (HC-SR04)
-Sensor Pin	Arduino Pin
+🧩 Components Used
+Component	Purpose
+Arduino Uno	Main controller
+HC-SR04 Ultrasonic Sensor	Obstacle detection
+ADXL345 Accelerometer	Fall detection
+Pulse Sensor	Heart rate monitoring
+HC-05 Bluetooth Module	Wireless data transmission
+OLED Display (SSD1306)	Status & data display
+WS2812 RGB LEDs	Visual indication
+Buzzer	Audio alert
+Resistors, jumper wires	Connections
+🔌 Pin Connections (Very Important)
+1️⃣ Ultrasonic Sensor (HC-SR04)
+HC-SR04 Pin	Arduino Pin
 VCC	5V
 GND	GND
 TRIG	D6
 ECHO	D7
-Accelerometer (ADXL345 – I2C)
+
+Purpose:
+Detects obstacles in front of the user.
+If an object is within 50 cm, an alert is triggered.
+
+2️⃣ Accelerometer (ADXL345 – I2C)
 ADXL345 Pin	Arduino Pin
 VCC	3.3V
 GND	GND
 SDA	A4
 SCL	A5
-Pulse Sensor
+
+Purpose:
+Detects sudden motion changes to identify falls.
+
+3️⃣ Pulse Sensor
 Pulse Sensor Pin	Arduino Pin
 VCC	5V
 GND	GND
-SIGNAL	A0
-OLED Display (SSD1306 – I2C)
+Signal	A0
+
+Purpose:
+Continuously monitors the user’s heart rate (BPM).
+
+4️⃣ Bluetooth Module (HC-05)
+HC-05 Pin	Arduino Pin
+VCC	5V
+GND	GND
+TXD	D10
+RXD	D11 (via voltage divider)
+
+Purpose:
+Sends alerts and sensor data to a mobile phone.
+
+5️⃣ OLED Display (SSD1306 – I2C)
 OLED Pin	Arduino Pin
 VCC	5V
 GND	GND
 SDA	A4
 SCL	A5
 
-(OLED and Accelerometer share the same I2C pins)
+Purpose:
+Displays system status, BPM, alerts, and messages.
 
-Bluetooth Module (HC-05)
-HC-05 Pin	Arduino Pin
-VCC	5V
-GND	GND
-TX	D10
-RX	D11 (use voltage divider)
-RGB LED (WS2812)
+6️⃣ RGB LED (WS2812)
 RGB Pin	Arduino Pin
-DATA	D6
+DIN	D5
 VCC	5V
 GND	GND
-Buzzer
+
+Color Meaning:
+
+🟢 Green → Normal
+
+🔴 Red → Fall / danger
+
+🔵 Blue → Idle / standby
+
+7️⃣ Buzzer
 Buzzer Pin	Arduino Pin
-+	D8
-−	GND
-Software Requirements
+
+| D8 |
+− | GND |
+
+Purpose:
+Provides audio alerts for obstacles, falls, and warnings.
+
+⚙️ Working Principle
+
+Ultrasonic sensor checks distance continuously
+
+If an obstacle is detected → buzzer alerts user
+
+Accelerometer detects sudden impact → fall alert
+
+Pulse sensor measures BPM
+
+OLED + RGB LED show system status
+
+Bluetooth sends emergency and sensor data to phone
+
+🛠️ Software & Libraries
 
 Arduino IDE
 
 Required Libraries:
 
-Adafruit ADXL345
+Adafruit_ADXL345_U
 
-Adafruit SSD1306
+Adafruit_NeoPixel
 
-Adafruit GFX
+PulseSensorPlayground
 
-Adafruit NeoPixel
+Adafruit_GFX
 
-PulseSensor Playground
+Adafruit_SSD1306
 
-How to Upload the Code
+👤 Target Users
 
-Open Arduino IDE
+This system is designed for:
 
-Install required libraries
+Visually impaired individuals
 
-Open Fall_Detection_Health_Monitoring_Stick.ino
+Elderly users
 
-Select board and COM port
+People requiring assisted mobility and health monitoring
 
-Click Upload
+✅ Project Status
 
-Bluetooth Output Example
-ACC: 0.12, 0.08, 9.81
-BPM: 72
-Fall Detected!
+✔ Ultrasonic obstacle detection
 
-Application
+✔ Fall detection
 
-This project is mainly used to help visually impaired persons by improving:
+✔ Heart rate monitoring
 
-Safety
+✔ Bluetooth alerts
 
-Health monitoring
+✔ Fully merged single Arduino code
 
-Emergency alerts
-
-Author
+📄 Author
 
 Abhinav S
-BCA – AI, ML & Robotics
+BCA | AI, ML & Robotics
 Yenepoya University, Bangalore
