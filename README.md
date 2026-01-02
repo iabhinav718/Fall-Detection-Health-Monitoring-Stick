@@ -133,29 +133,29 @@ Bluetooth sends emergency and sensor data to phone
 
 🛠️ Software & Libraries
 
-Arduino IDE
+-Arduino IDE
 
-Required Libraries:
+-Required Libraries:
 
-Adafruit_ADXL345_U
+-Adafruit_ADXL345_U
 
-Adafruit_NeoPixel
+-Adafruit_NeoPixel
 
-PulseSensorPlayground
+-PulseSensorPlayground
 
-Adafruit_GFX
+-Adafruit_GFX
 
-Adafruit_SSD1306
+-Adafruit_SSD1306
 
 👤 Target Users
 
 This system is designed for:
 
-Visually impaired individuals
+-Visually impaired individuals
 
-Elderly users
+-Elderly users
 
-People requiring assisted mobility and health monitoring
+-People requiring assisted mobility and health monitoring
 
 ✅ Project Status
 
@@ -168,6 +168,12 @@ People requiring assisted mobility and health monitoring
 ✔ Bluetooth alerts
 
 ✔ Fully merged single Arduino code
+
+
+
+
+
+
 
 📄 Author
 
