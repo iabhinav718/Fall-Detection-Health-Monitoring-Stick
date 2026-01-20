@@ -6,7 +6,7 @@ Fall Detection & Health Monitoring with Obstacle Alert
 📌 Project Overview
 
 This project is an Arduino-based smart walking stick designed to assist visually impaired individuals.
-It improves safety by detecting obstacles, falls, and health abnormalities, and provides audio, visual, and wireless alerts.
+It improves safety by detecting obstacles, falls, and health abnormalities, and provides audio, visual, and wireless alerts.     
 
 The system combines:
 
